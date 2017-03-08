@@ -8,19 +8,19 @@ document.addEventListener("DOMContentLoaded", function(){
 	
 	submenu.style.display = "none";
 	
-	var ofirmie = menu.firstElementChild;
-	console.log(ofirmie);
+	var about_us_li = menu.firstElementChild;
+	console.log(about_us_li);
 	
-	ofirmie.addEventListener("mouseover", function(){
+	about_us_li.addEventListener("mouseover", function(){
 		submenu.style.display = "block";
 	});
 	
-	ofirmie.addEventListener("mouseout", function(){
+	about_us_li.addEventListener("mouseout", function(){
 		submenu.style.display = "none";
 	});
 	
 	
-	//znikający opis z obrazka:
+	//znikający opis obrazka:
 	
 	var clair = document.querySelector(".Clair");
 	console.log(clair);
@@ -127,35 +127,37 @@ document.addEventListener("DOMContentLoaded", function(){
 	}
 	
 	
+	//kalkulator cen
+	
 	var updatePrice = function() {
 		var totalPrice = 0;
 		
-		var selectedRodzaj = document.querySelector('.list_panel.rodzaj a.selected');
-		var selectedKolor = document.querySelector('.list_panel.colors a.selected');
-		var selectedMaterial = document.querySelector('.list_panel.materials a.selected');
+		var selectedType = document.querySelector('.list_panel.type a.selected');
+		var selectedColor = document.querySelector('.list_panel.colors a.selected');
+		var selectedFabric = document.querySelector('.list_panel.fabric a.selected');
 		
-		totalPrice += parseInt(selectedRodzaj.attributes['data-price'].value);
+		totalPrice += parseInt(selectedType.attributes['data-price'].value);
 		
 		// jeśli kolor nie został jeszcze wybrany, to zmienna selctedKolor ma wartość null
-		if(selectedKolor !== null){
-			totalPrice += parseInt(selectedKolor.attributes['data-price'].value);	
+		if(selectedColor !== null){
+			totalPrice += parseInt(selectedColor.attributes['data-price'].value);	
 		}
 		
-		if(selectedMaterial !== null){
-			totalPrice += parseInt(selectedMaterial.attributes['data-price'].value);	
+		if(selectedFabric !== null){
+			totalPrice += parseInt(selectedFabric.attributes['data-price'].value);	
 		}
 		
 		document.querySelector('.sum strong').innerHTML = totalPrice + ' zł';
 	};
 	
 	
-	var rodzaje = document.querySelectorAll('.list_panel.rodzaj a');
+	var types = document.querySelectorAll('.list_panel.type a');
 	
-	var kolory = document.querySelectorAll('.list_panel.colors a');
+	var colors = document.querySelectorAll('.list_panel.colors a');
 	
-	var materialy = document.querySelectorAll('.list_panel.materials a');
+	var fabric = document.querySelectorAll('.list_panel.fabric a');
 	
-	var nazwa = document.querySelector(".nazwa");
+	var type_name = document.querySelector(".type_name");
 	var chair_color = document.querySelector(".chair_color");
 	var color_value = document.querySelector(".chair_color.value");
 	var chair_pattern = document.querySelector(".chair_pattern");
@@ -165,16 +167,16 @@ document.addEventListener("DOMContentLoaded", function(){
 	var transport_value = document.querySelector(".chair_transport.value");
 	console.log(transport_value);
 	
-	for (var i = 0; i < rodzaje.length; i++) {		
-		rodzaje[i].addEventListener("click", function(e){
-			for (var j = 0; j < rodzaje.length; j++) {
-				rodzaje[j].classList.remove('selected');
+	for (var i = 0; i < types.length; i++) {		
+		types[i].addEventListener("click", function(e){
+			for (var j = 0; j < types.length; j++) {
+				types[j].classList.remove('selected');
 			}
 			
 			e.preventDefault();
 			this.classList.add('selected');
 			
-			nazwa.innerHTML = this.innerText;
+			type_name.innerHTML = this.innerText;
 			
 			var colorsSpan = document.querySelector('.list_arrow_down.colors');
 			if (colorsSpan.classList.contains('disabled')) {
@@ -184,10 +186,10 @@ document.addEventListener("DOMContentLoaded", function(){
 		});
 	}
 	
-	for (var i = 0; i < kolory.length; i++) {
-		kolory[i].addEventListener("click", function(e){
-			for (var j = 0; j < kolory.length; j++) {
-				kolory[j].classList.remove('selected');
+	for (var i = 0; i < colors.length; i++) {
+		colors[i].addEventListener("click", function(e){
+			for (var j = 0; j < colors.length; j++) {
+				colors[j].classList.remove('selected');
 			}
 			
 			e.preventDefault();
@@ -196,9 +198,9 @@ document.addEventListener("DOMContentLoaded", function(){
 			chair_color.innerHTML = this.innerText;
 			color_value.innerHTML = parseInt(this.attributes['data-price'].value);
 			
-			var materialsSpan = document.querySelector('.list_arrow_down.materials');
-			if (materialsSpan.classList.contains('disabled')) {
-				materialsSpan.classList.remove('disabled');
+			var fabricSpan = document.querySelector('.list_arrow_down.fabric');
+			if (fabricSpan.classList.contains('disabled')) {
+				fabricSpan.classList.remove('disabled');
 			}
 			
 			var price = parseInt(this.attributes['data-price'].value);
@@ -208,10 +210,10 @@ document.addEventListener("DOMContentLoaded", function(){
 		});
 	}
 	
-	for (var i = 0; i < materialy.length; i++) {
-		materialy[i].addEventListener("click", function(e){
-			for (var j = 0; j < materialy.length; j++) {
-				materialy[j].classList.remove('selected');
+	for (var i = 0; i < fabric.length; i++) {
+		fabric[i].addEventListener("click", function(e){
+			for (var j = 0; j < fabric.length; j++) {
+				fabric[j].classList.remove('selected');
 			}
 			
 			e.preventDefault();

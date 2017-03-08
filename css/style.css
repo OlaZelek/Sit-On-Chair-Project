@@ -141,7 +141,7 @@ nav{
 	width: 1000px;
 }
 
-.left-side{
+.left_side{
 	width: 50%;
 	height: 370px;
 	float: left;
@@ -154,45 +154,18 @@ nav{
 	height: 100%;
 }
 
-.arrow-left{
-	font-size: 60px;
-	color: #46C2B5;
-	position: absolute;
-	bottom: 45%;
-	left: 0;
-}
-
-.arrow-left a{
-	text-decoration: none;
-	color: #46C2B5;
-}
-
-.right-side{
+.right_side{
 	width: 40%;
 	height: 370px;
 	float: left;
 }
 
-.arrow-right{
-	float: left;
-	position: absolute;
-	bottom: 45%;
-	right: 0;
-	font-size: 60px;
-	color: #46C2B5;
-}
-
-.arrow-right a{
-	text-decoration: none;
-	color: #46C2B5;
-}
-
-.right-side h2{
+.right_side h2{
 	padding-top: 45px;
 	text-align: center;
 }
 
-.right-side p{
+.right_side p{
 	text-align: justify;
 	padding: 15px;
 }
@@ -261,7 +234,7 @@ nav{
 	text-decoration: none;
 }
 
-.img1_line{
+.img1_belt{
 	width: 42%;
 	height: 10px;
 	background-color: #46C2B5;
@@ -301,7 +274,7 @@ nav{
 	text-decoration: none;
 }
 
-.img2_line{
+.img2_belt{
 	width: 45%;
 	height: 10px;
 	background-color: #46C2B5;
@@ -319,7 +292,7 @@ nav{
 	
 }
 
-.description_line{
+.description_belt{
 	width: 45%;
 	height: 10px;
 	background-color: #46C2B5;
@@ -369,6 +342,10 @@ nav{
 	position: relative;
 }
 
+.price_box1:hover{
+	border: 2px solid #1BB5B5;
+}
+
 .price_box2{
 	width: 320px;
 	float:left;
@@ -376,6 +353,10 @@ nav{
 	background-color: #46C2B5;
 	margin: 50px 20px;
 	position: relative;
+}
+
+.price_box2:hover{
+	border: 2px solid white;
 }
 
 .price_box3{
@@ -386,6 +367,10 @@ nav{
 	background-color: white;
 	margin-top: 50px;
 	position: relative;
+}
+
+.price_box3:hover{
+	border: 2px solid #1BB5B5;
 }
 
 .box_top_grey_circle{
@@ -420,7 +405,6 @@ nav{
 	font-size: 20px;
 	font-weight: 700;
 	color: #46C2B5;
-	
 }
 
 .price_box2 p{
