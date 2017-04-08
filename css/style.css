@@ -110,6 +110,8 @@ nav{
 
 .slider_inner {
 	transition: 300ms margin linear;
+	width: 3000px;
+	overflow: hidden;
 }
 
 .slider_outer .prev,
@@ -128,11 +130,6 @@ nav{
 
 .slider_outer .next {
 	right: 0;
-}
-
-.slider_inner {
-	width: 3000px;
-	overflow: hidden;
 }
 
 .box{

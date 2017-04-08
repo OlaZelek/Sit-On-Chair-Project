@@ -22,11 +22,6 @@ document.addEventListener("DOMContentLoaded", function(){
 	
 	//znikający opis obrazka:
 	
-	var clair = document.querySelector(".Clair");
-	console.log(clair);
-	var margarita = document.querySelector(".Margarita");
-	console.log(margarita);
-	
 	var img1_opacity = document.querySelector(".img1_opacity");
 	var img2_opacity = document.querySelector(".img2_opacity");
 	
@@ -176,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function(){
 			e.preventDefault();
 			this.classList.add('selected');
 			
-			type_name.innerHTML = this.innerText;
+			type_name.innerText = this.innerText;
 			
 			var colorsSpan = document.querySelector('.list_arrow_down.colors');
 			if (colorsSpan.classList.contains('disabled')) {
@@ -195,8 +190,8 @@ document.addEventListener("DOMContentLoaded", function(){
 			e.preventDefault();
 			this.classList.add('selected');
 			
-			chair_color.innerHTML = this.innerText;
-			color_value.innerHTML = parseInt(this.attributes['data-price'].value);
+			chair_color.innerText = this.innerText;
+			color_value.innerText = parseInt(this.attributes['data-price'].value);
 			
 			var fabricSpan = document.querySelector('.list_arrow_down.fabric');
 			if (fabricSpan.classList.contains('disabled')) {
@@ -219,8 +214,8 @@ document.addEventListener("DOMContentLoaded", function(){
 			e.preventDefault();
 			this.classList.add('selected');
 			
-			chair_pattern.innerHTML = this.innerText;
-			pattern_value.innerHTML = parseInt(this.attributes['data-price'].value);
+			chair_pattern.innerText = this.innerText;
+			pattern_value.innerText = parseInt(this.attributes['data-price'].value);
 			
 			var price = parseInt(this.attributes['data-price'].value);
 			totalPrice = price;
@@ -230,14 +225,14 @@ document.addEventListener("DOMContentLoaded", function(){
 	}
 	
 	transport.addEventListener("change", function(e){
-		chair_transport.innerHTML = "Transport";
-		transport_value.innerHTML = "TAK";
+		chair_transport.innerText = "Transport";
+		transport_value.innerText = "TAK";
 		
 		if(transport.checked === true){
-			transport_value.innerHTML = "TAK";
+			transport_value.innerText = "TAK";
 		}
 		else{
-			transport_value.innerHTML = "NIE";
+			transport_value.innerText = "NIE";
 		}
 	});
 	
